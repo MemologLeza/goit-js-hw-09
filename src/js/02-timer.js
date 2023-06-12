@@ -13,6 +13,7 @@ const timer = {
     seconds: document.querySelector('span[data-seconds]'),
 };
 let selectedDate = null;
+let timerId = null;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -61,6 +62,6 @@ function ChangeTimer() {
     if ((selectedDate - new Date())<=1000)  clearInterval(timerId) ;
 };
 btnStart.addEventListener("click", () => {
-    const timerId = setInterval(ChangeTimer, 1000);
+    timerId = setInterval(ChangeTimer, 1000);
     
 })
