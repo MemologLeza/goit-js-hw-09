@@ -25,7 +25,7 @@ let position = 1;
  let delay = Number(form.delay.value);
   const amount = Number(form.amount.value);
   const delayStep = Number(form.step.value);
-  for (i = 0; i < amount; i++){
+  for (let i = 0; i < amount; i++){
     createPromise(position, delay).then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
