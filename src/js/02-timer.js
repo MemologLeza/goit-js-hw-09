@@ -13,7 +13,6 @@ const timer = {
     seconds: document.querySelector('span[data-seconds]'),
 };
 let selectedDate = null;
-let timerId = null;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -48,10 +47,7 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 
 }
-// !=================================
-// const currentDate = convertMs(selectedDate - (new Date()));
-// console.log(currentDate.seconds);
-// !!================================
+
 function addZero(number) {
     return String(number).padStart(2, 0);
     
@@ -65,6 +61,6 @@ function ChangeTimer() {
     if ((selectedDate - new Date())<=1000)  clearInterval(timerId) ;
 };
 btnStart.addEventListener("click", () => {
-    timerId = setInterval(ChangeTimer, 1000);
+    const timerId = setInterval(ChangeTimer, 1000);
     
 })
